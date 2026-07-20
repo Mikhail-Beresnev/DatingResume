@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-bar">
+      <div class="brand">Mikhail Beresnev<span>&hearts;</span></div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">About Me</a></li>
+        <li><a href="looking-for.html">Looking For</a></li>
+        <li><a href="apply.html">Apply</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="tagline">Now Accepting Applications</span>
+        <h1>Think We'd Be a Good Match?</h1>
+        <p class="subtitle">
+          Fill this out and tell me a bit about you and lets get in touch.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="kicker">Before You Apply</span>
+          <h2>A Couple of My Principles</h2>
+        </div>
+        <div class="principle reveal">
+          <div class="num">01</div>
+          <div>
+            <h3>The golden rule</h3>
+            <p>Treat others the way you want to be treated.
+              To be more precise here, the qualities I am looking for in my partner, I possess them myself.</p>
+          </div>
+        </div>
+        <div class="principle reveal">
+          <div class="num">02</div>
+          <div>
+            <h3>The bare minimum</h3>
+            <p>Others may say that they are looking for things like loyalty and respect. I don't, not because I don't value them,
+              but because the relationship should not even exsist without them in the first place.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="container">
+        <div id="success-banner" class="success-banner reveal">
+          Thanks for applying! 🎉 Your application has been sent — I'll reach out if it seems like a good fit.
+        </div>
+        <div id="error-banner" class="error-banner reveal">
+          Something went wrong sending your application. Mind trying again in a moment?
+        </div>
+
+        <form
+          id="apply-form"
+          class="form-card reveal"
+          action="https://formspree.io/f/xzdngzko"
+          method="POST"
+          novalidate
+        >
+          <input type="hidden" name="_subject" value="New application from your dating resume site" />
+          <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required />
+              <span class="error-msg">Please enter your name.</span>
+            </div>
+            <div class="field">
+              <label for="age">Age</label>
+              <input type="number" id="age" name="age" min="18" max="120" required />
+              <span class="error-msg">Please enter your age.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+              <span class="error-msg">Please enter a valid email.</span>
+            </div>
+            <div class="field">
+              <label for="location">Location</label>
+              <input type="text" id="location" name="location" placeholder="City, State" required />
+              <span class="error-msg">Please enter your city.</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="photo-link">Link to a few photos of you <span class="hint">(optional — totally fine to skip this and just send some over once we're talking)</span></label>
+            <input type="url" id="photo-link" name="photo-link" placeholder="Link to a shared google photos/drive album, or whatever online platform you prefer" />
+          </div>
+
+          <div class="field">
+            <label for="about">Tell me about yourself</label>
+            <textarea id="about" name="about" required placeholder="What makes you, you?"></textarea>
+            <span class="error-msg">This field is required.</span>
+          </div>
+
+          <div class="field">
+            <label for="why">Why do you think we'd be a good match?</label>
+            <textarea id="why" name="why" required placeholder="Be honest, what caught your interest?"></textarea>
+            <span class="error-msg">This field is required.</span>
+          </div>
+
+          <div class="field">
+            <label for="extra-info">Anything else you'd like to share <span class="hint">(optional)</span></label>
+            <textarea id="extra-info" name="extra-info" placeholder="A fun fact, a question for me, a dealbreaker I should know about, or whatever feels relevant."></textarea>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="btn">Submit Application</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Mikhail Beresnev. Made with care (and a little JavaScript).</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
